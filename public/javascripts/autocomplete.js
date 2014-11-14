@@ -15,6 +15,20 @@ $(function() {
     "9.4.1 HF6"
     ];
 
+    $('form').submit(function(event){
+        event.preventDefault();
+        $.ajax({
+            type:'post',
+            url:'/search',
+            data:{
+                product: $("input#product").val(),
+                mstrversion: $("input#mstrversion").val()
+            },
+            error: function(){alert("request failed")},
+            success: function(res){$("span").text(res).show(); return;}
+        })
+    })
+
     $.getJSON("data/versions/941.json", function(data){
         var v = "941GA"
         var products = [];

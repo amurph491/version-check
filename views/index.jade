@@ -4,9 +4,10 @@ block content
   script(src="/javascripts/autocomplete.js")
   h1= title
   p Is
-    form(action='/search',method='post')
-      input(type="text",id="product",name="product")
+    form
+      input(type="text",id="product",name="product",placeholder="Firefox 21.x")
       p compatable with
-      input(type="text",id="mstrversion",name="mstrversion")
+      input(type="text",id="mstrversion",name="mstrversion",placeholder="9.4.1 HF4")
       p ?
       input(type='submit')
+  span
