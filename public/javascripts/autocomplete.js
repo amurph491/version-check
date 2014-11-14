@@ -1,81 +1,5 @@
 $(function() {
-    var products = [
-    "Oracle Web Application Server 10g Release 3 (10.1.3)",
-    "Oracle WebLogic Server 12c",
-    "Oracle WebLogic Server 10.3.x",
-    "Oracle GlassFish Server 3.1.x",
-    "IBM WebSphere 8.5.x",
-    "IBM WebSphere 8.0.x",
-    "IBM WebSphere 7.x",
-    "Apache Tomcat 7.0.x",
-    "Apache Tomcat 6.0.x",
-    "Apache TomEE 1.5.x",
-    "SAP NetWeaver Application Server 7.3.x",
-    "JBoss Enterprise Application Platform 6.0.x",
-    "JBoss Enterprise Web Platform 5.1.x",
-    "JBoss Enterprise Application Platform 5.1.x",
-    "JBoss Application Server 7.1.x",
-    "JBoss Application Server 5.1.x",
-    "IBM HTTP Server 8.x",
-    "IBM HTTP Server 7.x",
-    "Oracle HTTP Server 10g R3",
-    "Oracle iPlanet Web Server, Enterprise Edition 7.x",
-    "Oracle iPlanet Web Server, Enterprise Edition 6.1.x",
-    "Internet Information Services 7.5.x",
-    "Internet Information Services 7.0.x",
-    "Internet Information Services 6.x",
-    "Windows Server 2008 Enterprise Edition SP2 (on x64)",
-    "Windows Server 2008 Standard Edition SP2 (on x64)",
-    "Windows Server 2008 Enterprise Edition R2 SP1 (on x64)",
-    "Windows Server 2008 Standard Edition R2 SP1 (on x64)",
-    "Win Server 2012 Standard Release 2",
-    "Windows 2003 Standard Edition SP2 (on x64)",
-    "Windows 2003 Enterprise Edition SP2 (on x64)",
-    "Windows 2003 Standard Edition R2 SP2 (on x64)",
-    "Windows 2003 Enterprise Edition R2 SP2 (on x64)",
-    "Oracle Linux 7",
-    "Oracle Linux 6.5",
-    "Red Hat Enterprise Linux 7",
-    "Red Hat Enterprise Linux, 5.10",
-    "Red Hat Enterprise Linux 6.5",
-    "Microsoft Internet Explorer 8.x",
-    "Microsoft Internet Explorer 9.x",
-    "Microsoft Internet Explorer 10.x",
-    "Microsoft Internet Explorer 11.x",
-    "Safari 7.x",
-    "SUSE Linux 11.3",
-    "Firefox 16.x",
-    "Firefox 17.x",
-    "Firefox 18.x",
-    "Firefox 19.x",
-    "Firefox 20.x",
-    "Firefox 21.x",
-    "Firefox 22.x",
-    "Firefox 23.x",
-    "Firefox 24.x",
-    "Firefox 25.x",
-    "Firefox 26.x",
-    "Firefox 27.x",
-    "Firefox 28.x",
-    "Firefox 29.x",
-    "Firefox 30.x",
-    "Firefox 31.x",
-    "Google Chrome 22.x",
-    "Google Chrome 23.x",
-    "Google Chrome 24.x",
-    "Google Chrome 25.x",
-    "Google Chrome 26.x",
-    "Google Chrome 27.x",
-    "Google Chrome 28.x",
-    "Google Chrome 29.x",
-    "Google Chrome 30.x",
-    "Google Chrome 31.x",
-    "Google Chrome 32.x",
-    "Google Chrome 33.x",
-    "Google Chrome 34.x",
-    "Google Chrome 35.x",
-    "Google Chrome 36.x",
-  ];
+    
     var mstr = [
     "9.3.0",
     "9.3.1",
@@ -89,14 +13,20 @@ $(function() {
     "9.4.1 HF4",
     "9.4.1 HF5",
     "9.4.1 HF6"
-    ]
+    ];
 
-    $( "#product" ).autocomplete({
-      minLength: 2,
-      source: products
+    $.getJSON("data/versions/941.json", function(data){
+        var v = "941GA"
+        var products = [];
+        for(var k in data) {
+            products = (products.concat(data[k]["Supported"]).concat(data[k]["Certified"]));
+        }
+        $( "#product" ).autocomplete({
+            minLength: 2,
+            source: products.sort()
+        });
+        $( "#mstrversion" ).autocomplete({
+            source: mstr
+        });
     });
-
-      $( "#mstrversion" ).autocomplete({
-      source: mstr
-    });
-  });
+});

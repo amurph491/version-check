@@ -1,17 +1,17 @@
 var express = require('express');
 var router = express.Router();
 var fs = require('fs');
-var siTKB = require('siTKB');
+var checkVersion = require('checkVersion');
 
 /* GET home page. */
 router.get('/', function(req, res) {
-  
+  console.log(__dirname);
   res.render('index', { title: 'MicroStrategy Compatibility Checker' });
 });
 
 router.post('/search', function(req, res) {
   console.log(req.body);
-  var term = req.body.product.toUpperCase();
+  var term = req.body.product;
   var versionConvert = {
     "9.3.0":"930GA",
     "9.3.1":"931GA",
@@ -27,15 +27,19 @@ router.post('/search', function(req, res) {
     "9.4.1 HF6":"941HF6"
     }
   var version = req.body.mstrversion.toString() || {};
-  console.log("before" + version);
   version = versionConvert[version];
-  console.log(versionConvert);
-  console.log(version);
-  siTKB.siTKB(term,version,function() {
-      res.send(term);
+
+  checkVersion.checkVersion(version,term,function(found) {
+    var str = "";
+    if (found.version == ""){
+      str = found.product + " not found in " + version;
+    }
+    else{
+      str = found.product + " was " + found.status + " in " + found.version;
+    }
+      res.send(str);
     });
 });
-
 
 
 module.exports = router;
