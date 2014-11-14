@@ -1,9 +1,0 @@
-{
-  "941GA":{"TN":"TN45065","URL":"https://resource.microstrategy.com/support/releasenote/MSTRAnalytics/ReleaseNotes/ReadMe_WebUniversal_5.htm"},
-  "941HF1":{"TN":"TN45732","URL":"http://community.microstrategy.com/t5/Release-Notes/TN45732-MicroStrategy-Analytics-9-4-1-Hotfix-1-Readme/ta-p/195408"},
-  "941HF2":{"TN":"TN46118","URL":"http://community.microstrategy.com/t5/Release-Notes/TN46118-MicroStrategy-Analytics-9-4-1-Hotfix-2-Readme/ta-p/195781"},
-  "941HF3":{"TN":"TN46584","URL":"http://community.microstrategy.com/t5/Release-Notes/TN46584-MicroStrategy-Analytics-9-4-1-Hotfix-3-Readme/ta-p/196233"},
-  "941HF4":{"TN":"TN47146","URL":"http://community.microstrategy.com/t5/Release-Notes/TN47146-MicroStrategy-Analytics-9-4-1-Hotfix-4-Readme/ta-p/196786"},
-  "941HF5":{"TN":"TN47756","URL":"http://community.microstrategy.com/t5/Release-Notes/TN47756-MicroStrategy-Analytics-9-4-1-Hotfix-5-Readme/ta-p/197387"},
-  "941HF6":{"TN":"TN201038","URL":"http://community.microstrategy.com/t5/Release-Notes/TN201038-MicroStrategy-Analytics-9-4-1-Hotfix-6-Readme/ta-p/201038"}
-}
