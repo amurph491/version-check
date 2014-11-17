@@ -5,6 +5,8 @@ $(function() {
     "9.3.1",
     "9.3.1 HF1",
     "9.3.1 HF2",
+    "9.3.1 HF3",
+    "9.3.1 HF4",
     "9.4.0",
     "9.4.1",
     "9.4.1 HF1",
@@ -24,7 +26,7 @@ $(function() {
                 product: $("input#product").val(),
                 mstrversion: $("input#mstrversion").val()
             },
-            error: function(){alert("request failed")},
+            error: function(){alert("Please enter a valid MicroStrategy Version number")},
             success: function(res){$("span").text(res).show(); return;}
         })
     })
@@ -36,7 +38,7 @@ $(function() {
             products = (products.concat(data[k]["Supported"]).concat(data[k]["Certified"]));
         }
         $( "#product" ).autocomplete({
-            minLength: 2,
+            minLength: 1,
             source: products.sort()
         });
         $( "#mstrversion" ).autocomplete({

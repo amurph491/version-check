@@ -16,7 +16,9 @@ router.post('/search', function(req, res) {
     "9.3.0":"930GA",
     "9.3.1":"931GA",
     "9.3.1 HF1":"931HF1",
-    "9.3.1 HF2":"931HF1",
+    "9.3.1 HF2":"931HF2",
+    "9.3.1 HF3":"931HF3",
+    "9.3.1 HF4":"931HF4",
     "9.4.0":"940GA",
     "9.4.1":"941GA",
     "9.4.1 HF1":"941HF1",
@@ -32,10 +34,13 @@ router.post('/search', function(req, res) {
   checkVersion.checkVersion(version,term,function(found) {
     var str = "";
     if (found.version == ""){
-      str = found.product + " not found in " + version;
+      str = found.product + " is not supported in " + version;
+    }
+    else if (found.version != version){
+      str = "Yes, " + found.product + " is " + found.status + " in " + version+ ". It was first "+found.status+" in " + found.version + ".";
     }
     else{
-      str = found.product + " was " + found.status + " in " + found.version;
+      str = "Yes, " + found.product  + " is " + found.status + " in " + found.version + ".";
     }
       res.send(str);
     });
