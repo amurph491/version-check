@@ -33,9 +33,10 @@ app.use('/versions', versions);
 
 updateAutocompleteList.updateAutocompleteList();
 
-new CronJob('45 14 * * * *', function(){
+//Every day at 11 update the Autocomplete list
+new CronJob('0 0 11 * * *', function(){
     console.log('Cron Job triggered');
-    
+    updateAutocompleteList.updateAutocompleteList();
 }, null, true, null);
 
 

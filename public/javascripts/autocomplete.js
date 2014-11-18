@@ -31,15 +31,10 @@ $(function() {
         })
     })
 
-    $.getJSON("data/versions/941.json", function(data){
-        var v = "941GA"
-        var products = [];
-        for(var k in data) {
-            products = (products.concat(data[k]["Supported"]).concat(data[k]["Certified"]));
-        }
+    $.getJSON("data/products_arr.json", function(data){
         $( "#product" ).autocomplete({
             minLength: 1,
-            source: products.sort()
+            source: data
         });
         $( "#mstrversion" ).autocomplete({
             source: mstr

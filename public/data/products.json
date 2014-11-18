@@ -39,10 +39,6 @@
     "Windows Server 2008 Standard Edition R2 SP1 (on x64)": "",
     "Windows Server 2008 Enterprise Edition R2 SP1 (on x64)": "",
     "Windows Server 2012 Standard (on x64)": "",
-    "Solaris 10.x": "",
-    "Solaris 11.x": "",
-    "AIX 6.1.x": "",
-    "AIX 7.1.x": "",
     "Red Hat Enterprise Linux 5.x": "",
     "Red Hat Enterprise Linux 6.0.x (on x86-64)": "",
     "Red Hat Enterprise Linux 6.1.x (on x86-64)": "",
@@ -177,5 +173,9 @@
     "Red Hat Enterprise Linux 7": "",
     "Chrome 36.x": "",
     "Firefox 31.x": "",
-    "Firefox 30.x": ""
+    "Firefox 30.x": "",
+    "Solaris 10.x": "",
+    "Solaris 11.x": "",
+    "AIX 6.1.x": "",
+    "AIX 7.1.x": ""
 }
