@@ -26,5 +26,9 @@
   "941HF6":{
     "Supported":[],
     "Certified":["Oracle Linux 7","Red Hat Enterprise Linux 7","Chrome 36.x","Firefox 31.x","Firefox 30.x"]
+  },
+    "941HF7":{
+    "Supported":[],
+    "Certified":["Chrome 37.x","Chrome 38.x","Firefox 32.x","Firefox 33.x"]
   }
 }

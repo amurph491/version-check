@@ -1,8 +1,29 @@
 body {
   padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  font: 1.0rem "Lucida Grande", Helvetica, Arial, sans-serif;
 }
 
 a {
   color: #00B7FF;
+}
+
+input {
+  border:0;
+  border-bottom:1px dashed #d9d9d9;
+  font-size:1.0rem;
+  padding:0.2rem 0.8rem;
+}
+
+input[type=submit] {
+  border:0;
+  background:#0f9d58;
+  color:#fff;
+  line-height:32px;
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.26);
+  transition:all 150ms;
+}
+
+input[type=submit]:hover {
+  background:#00c364;
+  transition:all 150ms;
 }
